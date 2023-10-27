@@ -1,0 +1,119 @@
+/* Add your custom styles here */
+body {
+    font-family: Arial, sans-serif;
+    font-size: larger;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+nav {
+    padding: 10px 11%;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    font-size: larger;
+}
+
+main {
+    margin: 20px;
+    flex: 1;
+    padding: 0 10%;
+    box-sizing: border-box;
+}
+
+section {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+.about {
+    padding: 10px 20%; /* 20% padding on the left and right sides */
+    box-sizing: border-box; /* Ensure the padding is included in the width */
+}
+
+.about-content {
+    display: flex;
+    flex-direction: row; /* Display the project details and image side by side */
+}
+
+.about-details {
+    flex: 1; /* Takes up remaining horizontal space */
+}
+
+.about-image {
+    flex: 1;
+    text-align: center; /* Center-align the image within its container */
+}
+
+.about-image img {
+    max-width: 70%;
+    height: auto;
+}
+
+
+/*project listings*/
+.project_lists {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+    border: 1px solid #000;
+    border-radius: 5px;
+    margin-bottom:  4px;
+}
+
+.project_lists a {
+    text-decoration: none;
+    color: #333;
+}
+
+.project_lists_content {
+    display: flex;
+    align-items: center;
+}
+
+.project_lists img {
+    max-width: 200px;
+    margin-right: 20px; /* Add spacing between the image and the text */
+}
+
+.project_lists_details {
+    flex: 1;
+}
+
+.project_lists h3 {
+    font-weight: bold;
+}
