@@ -137,3 +137,7 @@ a {
 a:hover {
     color: #004b91; /* Change the hover color to your preference */
 }
+
+img.donut_image {
+    max-width: 40%;
+}
