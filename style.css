@@ -1,139 +1,166 @@
-/* Add your custom styles here */
+
+/* General styles */
 body {
-    font-family: Arial, sans-serif;
-    font-size: larger;
-    text-align: justify;
-    text-justify: inter-word;
     margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-header {
-    background-color: #333;
-    color: #fff;
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: white;
     text-align: center;
-    padding: 20px;
 }
 
-nav {
-    padding: 10px 11%;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0% 5% 5% 5%;
 }
 
-nav ul {
-    list-style-type: none;
+/* Header section */
+.social-icons {
+    display: flex;
+    margin-left: 20px;
+}
+
+.social-icons a {
+    margin-left: 10px;
+}
+
+.social-icons img {
+    width: 30px;
+    height: 30px;
+}
+
+.header .bullets {
+    margin-top: 10px;
+    text-align: left;
+}
+
+.header .bullets ul {
+    list-style-type: disc;
     margin: 0;
-    padding: 0;
+    padding-left: 20px;
 }
 
-nav li {
-    display: inline;
+.profile-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    background-color: #111;
+    max-width: 800px;
+    margin: 40px auto 20px auto;
+}
+
+.profile-left {
+    flex: 0 0 auto;
+}
+
+.profile-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit:cover;
+}
+
+.profile-middle {
+    flex-grow: 1;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.profile-middle h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.profile-middle p {
+    margin: 5px 0;
+}
+
+.profile-right {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 15px;
+}
+
+.profile-right a img {
+    width: 30px;
+    height: 30px;
+    /*filter: invert(1);  Makes the icons white for dark mode */
+}
+
+/* Separator line */
+.separator {
+    width: 100%;
+    height: 1px;
+    background-color: grey;
+    margin: 1% 0;
+}
+
+/* Tabs section */
+.tabs {
+    margin-top: 20px;
+}
+
+.tab {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #333;
+    border-radius: 10px;
+    max-width: 800px;
+    background-color: #111;
+    transition: background-color 0.3s;
+}
+
+.tab:hover {
+    background-color: #333;
+}
+
+.tab img {
+    width: 100px;
+    height: auto;
     margin-right: 20px;
 }
 
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    font-size: larger;
-}
-
-main {
-    margin: 20px;
-    flex: 1;
-    padding: 0 10%;
-    box-sizing: border-box;
-}
-
-section {
-    background-color: #fff;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 5px;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-}
-
-.about {
-    padding: 10px 20%; /* 20% padding on the left and right sides */
-    box-sizing: border-box; /* Ensure the padding is included in the width */
-}
-
-.about-content {
-    display: flex;
-    flex-direction: row; /* Display the project details and image side by side */
-}
-
-.about-details {
-    flex: 1; /* Takes up remaining horizontal space */
-}
-
-.about-image {
-    flex: 1;
-    text-align: center; /* Center-align the image within its container */
-}
-
-.about-image img {
-    max-width: 70%;
-    height: auto;
-}
-
-
-/*project listings*/
-.project_lists {
-    margin-top: 20px;
-    margin-bottom: 20px;
+.tab-content {
+    display: none;
     text-align: left;
-    border: 1px solid #000;
-    border-radius: 5px;
-    margin-bottom:  4px;
+    margin-top: 10px;
 }
 
-.project_lists a {
-    text-decoration: none;
-    color: #333;
+.tab.active .tab-content {
+    display: block;
 }
 
-.project_lists_content {
-    display: flex;
-    align-items: center;
+.tab h2 {
+    text-align: left;
+    font-size: 1.8em;
+    margin: 0;
 }
 
-.project_lists img {
-    max-width: 160px;
-    min-height: 115px;
-    margin-right: 20px; /* Add spacing between the image and the text */
-    border-radius: 3px;
+.tab .bullets ul {
+    text-align: left;
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 10px 0;
 }
 
-.project_lists_details {
-    flex: 1;
-}
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
 
-.project_lists h3 {
-    font-weight: bold;
-}
+    .header img {
+        margin-bottom: 20px;
+    }
 
-.world_image{
-    max-width: 200px;
-    max-height: 200px;
-}
-
-a {
-    text-decoration: none;
-    color: #0078d4; /* Change the color to your preference */
-    font-weight: bold;
-    transition: color 0.2s; /* Add a smooth color transition effect */
-}
-
-a:hover {
-    color: #004b91; /* Change the hover color to your preference */
+    .tab {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 }

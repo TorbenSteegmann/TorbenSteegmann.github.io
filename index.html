@@ -3,53 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/logo.jpg" type="image/jpg">
-    <link rel="stylesheet" href="style.css">
-    <title>Torben Steegmann</title>
+    <link rel="icon" href="res/logo.jpg" type="image/jpg">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Portfolio</title>
+    
 </head>
 <body>
-    <header>
-        <h1>Torben Steegmann</h1>
-    </header>
-    <nav>
-        <ul>
-            <li><a href="index.html">About</a></li>
-            <li><a href="projects/projects.html">Projects</a></li>
-            <li><a href="sidequests/sidequests.html">Sidequests</a></li>
-        </ul>
-    </nav>
-
-    <main>
-        <h2>About</h2>
-        <div class="about-content">
-            <div class="about-details">
-                <p>
-                    My name is Torben Jared Steegmann. I am a 23-year-old computer science student at RWTH Aachen, where I graduated in the 
-                    summer of 2023 with a B.Sc. degree in computer science and a minor in physics. <br> <br>
-
-                    Since then, I have begun pursuing a master's degree with a focus on computer graphics, physically based animation, and 
-                    high-performance computation. My personal projects include game development and building a ray tracing engine. Although 
-                    I am still early in my career, I have developed a particular interest in coding efficiently. <br> <br>
-
-                    When I am not working or studying at the computer, you are most likely to find me gaming or playing table tennis. <br> <br>
-
-                    You can find my public work on my <a href="https://github.com/TorbenSteegmann" target="_blank">GitHub</a>.
-                </p>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="profile-card">
+            <div class="profile-left">
+                <img src="res/profil.jpg" alt="Profile Picture" class="profile-img">
             </div>
-            <div class="about-image">
-                <img src="images/profile_picture.jpg" alt="Profile Picture">
+            <div class="profile-middle">
+                <h2>Torben Jared Steegmann</h2>
+                <p>Computer Science Student at RWTH-Aachen</p>
+                <p>Looking to hire? Contact me: <a href="mailto:steegmanntorben@gmail.com">steegmanntorben@gmail.com</a></p>
+            </div>
+            <div class="profile-right">
+                <a href="https://www.youtube.com" target="_blank">
+                    <img src="res/linkedin-logo.png" alt="LinkedIn">
+                </a>
+                <a href="https://github.com" target="_blank">
+                    <img src="res/github.png" alt="GitHub">
+                </a>
             </div>
         </div>
-        <h2>Contact</h2>
-        <div>
-            <a href="mailto:steegmanntorben@gmail.com">steegmanntorben@gmail.com</a> <br>
-            <a href="https://www.linkedin.com/in/torben-steegmann-814a8122a/" target="_blank">LinkedIn</a>
+
+        <!-- Separator -->
+        <div class="separator"></div>
+
+
+        <!-- Tabs Section -->
+        <div class="tabs">
+            <!-- Tab 0 -->
+            <div class="tab" onclick="toggleTab(this)">
+                <img src="res/physics-logo-7.jpg" alt="Tab Image 2">
+                <div>
+                    <h2>Physics Simulation</h2>
+                    <div class="bullets">
+                        <ul>
+                            <li>Classical Dynamics</li>
+                            <li>Quantum Dynamics</li>
+                            <li>C++</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <p>Over the years I have written a lot of physics simulations. These range from fluids, over soft-bodies to quantum dynamics. You can find a selection of simulations on my GitHub <a href="https://github.com/TorbenSteegmann/computational_physics" target="_blank">here</a>.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Tab 1 -->
+            <div class="tab" onclick="toggleTab(this)">
+                <img src="res/scout_logo.jpg" alt="Tab Image 1">
+                <div>
+                    <h2>Scout</h2>
+                    <div class="bullets">
+                        <ul>
+                            <li>Software Verification</li>
+                            <li>Octagonal Relations</li>
+                            <li>C++ Library</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <p>Scout is the product of my bachelor thesis. It is a library for accelerating octagonal relations for software verification. You can find a detailed description, the source code and the thesis on my GitHub <a href="https://github.com/TorbenSteegmann/Scout" target="_blank">here</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2 -->
+            <div class="tab" onclick="toggleTab(this)">
+                <img src="res/cpm_track.jpg" alt="Tab Image 2">
+                <div>
+                    <h2>Cyber-Physical Mobility Lab</h2>
+                    <div class="bullets">
+                        <ul>
+                            <li>Autonomous Driving</li>
+                            <li>C++</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <p>In this internship me and a small team developed an autonomous package delivery system. You can find detailed information on the project and the lab on their website <a href="https://cpm.embedded.rwth-aachen.de/" target="_blank">here</a>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add more tabs as needed -->
+             <!-- Tab 3 -->
+            <div class="tab" onclick="toggleTab(this)">
+                <img src="res/vr-logo.jpg" alt="Tab Image 2">
+                <div>
+                    <h2>Virtual Reality Lab</h2>
+                    <div class="bullets">
+                        <ul>
+                            <li>VR-Software Development</li>
+                            <li>Unreal Engine 5</li>
+                            <li>C++</li>
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <p>In this internship we developed a VR-Game in Unreal Engine 5.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleTab(element) {
+            const isActive = element.classList.contains('active');
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
             
-        </div>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Torben Steegmann</p>
-    </footer>
+            if (!isActive) {
+                element.classList.add('active');
+            }
+        }
+    </script>
 </body>
 </html>
