@@ -7,6 +7,15 @@ body {
     color: white;
     text-align: center;
 }
+a {
+    color: orange;
+}
+
+a:visited { 
+    color:orange;
+}
+
+
 
 .container {
     max-width: 1200px;
@@ -29,16 +38,37 @@ body {
     height: 30px;
 }
 
-.profile-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.profile
+{
+    display:grid;
     padding: 20px;
     border: 1px solid #333;
     border-radius: 10px;
     background-color: #111;
     max-width: 800px;
     margin: 40px auto 20px auto;
+    transition: background-color 0.3s;
+}
+
+.profile-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    
+}
+.profile:hover {
+    background-color: #333;
+}
+
+.tab-content {
+    display: none;
+    text-align: left;
+    margin-top: 10px;
+}
+
+.profile.active .tab-content {
+    display: block;
 }
 
 .profile-left {
@@ -77,10 +107,14 @@ body {
     gap: 15px;
 }
 
-.profile-right a img {
+.profile-right a img 
+{
     width: 30px;
     height: 30px;
-    /*filter: invert(1);  Makes the icons white for dark mode */
+}
+.cv_icon 
+{
+    filter: invert(1);
 }
 
 /* Separator line */
@@ -121,7 +155,8 @@ body {
 
 .tab-content {
     display: none;
-    text-align: left;
+    text-align: justify;
+    text-justify: inter-word;
     margin-top: 10px;
 }
 
@@ -142,26 +177,106 @@ body {
     margin: 10px 0;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
+@media(max-width: 3900px)
+{
+    .container {
+        width: 40%;
+        max-width: 1200px; /* Maintain a consistent maximum width */
+        margin: 0 auto; /* This centers the container */
+        transform: scale(2.5); /* Use transform for scaling */
+        padding: 0;
+        overflow-x: hidden;
+        transform-origin: top center; /* Ensures content remains centered */
+    }
+}
+
+@media(max-width: 2000px)
+{
+    .container {
+        max-width: 1200px;
+        width: 80%;
+        margin: 0 auto;
+        padding: 0% 5% 5% 5%;
+        transform: none;
+    }
+}
+
+/* Further adjustments for very small screens (e.g., phones) */
+@media (max-width: 514px) {
+    .container {
+        width: 80%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0% 5% 5% 5%;
+        transform: none;
     }
 
-    .header img {
-        margin-bottom: 20px;
+    .profile-card
+    {
+        display:grid;
+        
+    }
+    .profile-middle
+    {
+        padding: 0;
+        display:block;
+        align-content:center;
+        text-align: center;
+    }
+    .profile-right
+    {
+        display: block;
+    }
+    .profile-right a
+    {
+        color: transparent;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+
+    .tab-content
+    {
+        text-align: justify;
+        text-align-last: center;
     }
 
     .tab {
-        flex-direction: column;
-        align-items: flex-start;
+        display: block;
+        align-content: center;
+        text-align: center;
+        padding: 10px 5px; /* Reduce overall padding for very small devices */
     }
+
+    .tab h2
+    {
+        font-size: 1.3em; /* Further reduce headline font size */
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .tab .bullets ul
+    {
+        padding: 0;
+        margin: 0;
+        align-content: center;
+        text-align: center;
+        list-style-type: none;
+    }
+
+    .tab ul {
+        font-size: 0.9em; /* Reduce font size slightly for better fit */
+    }
+
+    .tab img {
+        padding: 0;
+        margin: 0;
+    };
+
+
+
 }
 
-a {
-    color: orange;
-}
 
-a:visited { 
-    color:orange;
-}
+
+

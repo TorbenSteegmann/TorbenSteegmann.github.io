@@ -11,25 +11,39 @@
 <body>
     <div class="container">
         <!-- Header Section -->
-        <div class="profile-card">
-            <div class="profile-left">
-                <img src="res/profil.jpg" alt="Profile Picture" class="profile-img">
+        <div class="profile" onclick="toggleTab(this)">
+            <div class="profile-card">
+                <div class="profile-left">
+                    <img src="res/profil.jpg" alt="Profile Picture" class="profile-img">
+                </div>
+                <div class="profile-middle">
+                    <h2>Torben Jared Steegmann</h2>
+                    <p>Computer Science Student at RWTH-Aachen</p>
+                    <p>Looking to hire? Contact me: <a href="mailto:steegmanntorben@gmail.com" onclick="event.stopPropagation()">steegmanntorben@gmail.com</a></p>
+                </div>
+                <div class="profile-right">
+                    <a class="cv_icon" href="https://raw.githubusercontent.com/TorbenSteegmann/Scout/refs/heads/main/Developing%20a%20Library%20for%20Accelerating%20Octagonal%20Relations.pdf" target="_blank" onclick="event.stopPropagation()">
+                        <img src="res/CV_Icon.png" alt="CV">
+                    </a>
+                    <a href="https://github.com/TorbenSteegmann" target="_blank" onclick="event.stopPropagation()">
+                        <img src="res/github.png" alt="GitHub">
+                    </a>
+                    <a href="https://www.linkedin.com/in/torben-steegmann-814a8122a/" target="_blank" onclick="event.stopPropagation()">
+                        <img src="res/linkedin-logo.png" alt="LinkedIn">
+                    </a>
+                </div>
             </div>
-            <div class="profile-middle">
-                <h2>Torben Jared Steegmann</h2>
-                <p>Computer Science Student at RWTH-Aachen</p>
-                <p>Looking to hire? Contact me: <a href="mailto:steegmanntorben@gmail.com">steegmanntorben@gmail.com</a></p>
-            </div>
-            <div class="profile-right">
-                <a href="https://www.linkedin.com/in/torben-steegmann-814a8122a/" target="_blank">
-                    <img src="res/linkedin-logo.png" alt="LinkedIn">
-                </a>
-                <a href="https://github.com/TorbenSteegmann" target="_blank">
-                    <img src="res/github.png" alt="GitHub">
-                </a>
+            <div class="tab-content">
+                <p>My name is Torben Jared Steegmann. I am a 24-year-old computer science student at RWTH Aachen, where I graduated in the summer of 2023 with a B.Sc. degree in computer science and a minor in physics. <br> <br>
+
+                    Since then, I have begun pursuing a master's degree with a focus on computer graphics, physically based animation, and high-performance computation. My personal projects include game development and physics simulations. I have also developed a particular interest in coding efficiently. <br> <br>
+                    
+                    When I am not working or studying at the computer, you are most likely to find me gaming or playing table tennis. <br> <br> 
+                
+                    On this website, you can find links to my <a href="https://github.com/TorbenSteegmann" target="_blank" onclick="event.stopPropagation()">CV</a>, <a href="https://github.com/TorbenSteegmann" target="_blank" onclick="event.stopPropagation()">GitHub</a> and <a href="https://www.linkedin.com/in/torben-steegmann-814a8122a/" target="_blank" onclick="event.stopPropagation()">LinkedIn</a>, as well as brief summaries of my work experience.
+                </p>
             </div>
         </div>
-
         <!-- Separator -->
         <div class="separator"></div>
 
@@ -49,7 +63,7 @@
                         </ul>
                     </div>
                     <div class="tab-content">
-                        <p>Over the years I have written a lot of physics simulations. These range from fluids, over soft-bodies to quantum dynamics. You can find a selection of simulations on my GitHub <a href="https://github.com/TorbenSteegmann/computational_physics" target="_blank">here</a>.</p>
+                        <p>Over the years, I have written numerous physics simulations, ranging from fluid dynamics and soft-body physics to quantum dynamics. A selection of these simulations can be found on my GitHub <a href="https://github.com/TorbenSteegmann/computational_physics" target="_blank" onclick="event.stopPropagation()">here</a>.</p>
                     </div>
                 </div>
             </div>
@@ -66,7 +80,7 @@
                         </ul>
                     </div>
                     <div class="tab-content">
-                        <p>Scout is the product of my bachelor thesis. It is a library for accelerating octagonal relations for software verification. You can find a detailed description, the source code and the thesis on my GitHub <a href="https://github.com/TorbenSteegmann/Scout" target="_blank">here</a>.</p>
+                        <p>Scout is the result of my bachelor's thesis. It is a library designed to accelerate octagonal relations for software verification. A detailed description, the source code, and the thesis can be found on my GitHub <a href="https://github.com/TorbenSteegmann/Scout" target="_blank" onclick="event.stopPropagation()">here</a>.</p>
                     </div>
                 </div>
             </div>
@@ -83,7 +97,7 @@
                         </ul>
                     </div>
                     <div class="tab-content">
-                        <p>In this internship me and a small team developed an autonomous package delivery system. You can find detailed information on the project and the lab on their website <a href="https://cpm.embedded.rwth-aachen.de/" target="_blank">here</a>.</p>
+                        <p>During this internship, a small team and I developed an autonomous package delivery system. Detailed information about the project and the lab can be found <a href="https://cpm.embedded.rwth-aachen.de/" target="_blank" onclick="event.stopPropagation()">here</a>.</p>
                     </div>
                 </div>
             </div>
@@ -102,7 +116,7 @@
                         </ul>
                     </div>
                     <div class="tab-content">
-                        <p>In this internship we developed a VR-Game in Unreal Engine 5.</p>
+                        <p>During this internship, we developed a VR game using Unreal Engine 5.</p>
                     </div>
                 </div>
             </div>
@@ -111,13 +125,19 @@
     </div>
 
     <script>
-        function toggleTab(element) {
+        function toggleTab(element) 
+        {
             const isActive = element.classList.contains('active');
             const tabs = document.querySelectorAll('.tab');
-            tabs.forEach(tab => tab.classList.remove('active'));
+            //tabs.forEach(tab => tab.classList.remove('active'));
             
-            if (!isActive) {
+            if (!isActive) 
+            {
                 element.classList.add('active');
+            }
+            else 
+            {
+                element.classList.remove('active');
             }
         }
     </script>
