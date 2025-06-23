@@ -1,4 +1,3 @@
-
 /* General styles */
 body {
     margin: 0;
@@ -10,12 +9,9 @@ body {
 a {
     color: orange;
 }
-
 a:visited { 
-    color:orange;
+    color: orange;
 }
-
-
 
 .container {
     max-width: 1200px;
@@ -24,22 +20,7 @@ a:visited {
 }
 
 /* Header section */
-.social-icons {
-    display: flex;
-    margin-left: 20px;
-}
-
-.social-icons a {
-    margin-left: 10px;
-}
-
-.social-icons img {
-    width: 30px;
-    height: 30px;
-}
-
-.profile
-{
+.profile {
     display:grid;
     padding: 20px;
     border: 1px solid #333;
@@ -47,7 +28,6 @@ a:visited {
     background-color: #111;
     max-width: 800px;
     margin: 40px auto 20px auto;
-    transition: background-color 0.3s;
 }
 
 .profile-card {
@@ -55,8 +35,8 @@ a:visited {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    
 }
+
 .profile:hover {
     background-color: #333;
 }
@@ -64,7 +44,8 @@ a:visited {
 .tab-content {
     display: none;
     text-align: left;
-    margin-top: 10px;
+    margin-top: 20px;
+    line-height: 1.6; /* Increased line-height for better readability */
 }
 
 .profile.active .tab-content {
@@ -95,34 +76,35 @@ a:visited {
 
 .profile-middle p {
     margin: 5px 0;
+    color: #ccc; /* Slightly dimmer text for subtitle */
 }
 
-.profile-middle a { 
-    color:orange;
+.profile-middle h2 + p { /* The first paragraph after the h2 */
+    color: #fff; /* Keep the main title line bright */
 }
 
 .profile-right {
     flex: 0 0 auto;
     display: flex;
     gap: 15px;
+    align-items: center;
 }
 
-.profile-right a img 
-{
+.profile-right a img {
     width: 30px;
     height: 30px;
 }
-.cv_icon 
-{
+
+.cv_icon {
     filter: invert(1);
 }
 
 /* Separator line */
 .separator {
-    width: 100%;
+    width: 80%;
     height: 1px;
-    background-color: grey;
-    margin: 1% 0;
+    background-color: #333;
+    margin: 40px auto;
 }
 
 /* Tabs section */
@@ -140,7 +122,6 @@ a:visited {
     border-radius: 10px;
     max-width: 800px;
     background-color: #111;
-    transition: background-color 0.3s;
 }
 
 .tab:hover {
@@ -149,15 +130,10 @@ a:visited {
 
 .tab img {
     width: 100px;
-    height: auto;
+    height: 100px;
+    object-fit: cover;
     margin-right: 20px;
-}
-
-.tab-content {
-    display: none;
-    text-align: justify;
-    text-justify: inter-word;
-    margin-top: 10px;
+    border-radius: 5px;
 }
 
 .tab.active .tab-content {
@@ -172,24 +148,22 @@ a:visited {
 
 .tab .bullets ul {
     text-align: left;
-    list-style-type: disc;
-    padding-left: 20px;
-    margin: 10px 0;
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0;
+    margin: 10px 0 0 0;
 }
 
-@media(max-width: 3900px)
-{
-    .container {
-        width: 40%;
-        max-width: 1200px; /* Maintain a consistent maximum width */
-        margin: 0 auto; /* This centers the container */
-        transform: scale(2.5); /* Use transform for scaling */
-        padding: 0;
-        overflow-x: hidden;
-        transform-origin: top center; /* Ensures content remains centered */
-    }
+.tab .bullets li {
+    display: inline-block; /* Display bullets in a line */
+    background-color: #333;
+    border-radius: 12px;
+    padding: 5px 12px;
+    margin-right: 8px;
+    margin-bottom: 5px; /* Allow wrapping */
+    font-size: 0.9em;
 }
 
+/* Responsive Design Adjustments */
 @media(max-width: 2000px)
 {
     .container {
@@ -197,86 +171,30 @@ a:visited {
         width: 80%;
         margin: 0 auto;
         padding: 0% 5% 5% 5%;
-        transform: none;
     }
 }
 
-/* Further adjustments for very small screens (e.g., phones) */
-@media (max-width: 514px) {
-    .container {
-        width: 80%;
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0% 5% 5% 5%;
-        transform: none;
+@media (max-width: 600px) {
+    .profile-card {
+        flex-direction: column; /* Stack profile items vertically */
+        gap: 15px;
     }
-
-    .profile-card
-    {
-        display:grid;
-        
-    }
-    .profile-middle
-    {
+    .profile-middle {
         padding: 0;
-        display:block;
-        align-content:center;
         text-align: center;
     }
-    .profile-right
-    {
-        display: block;
-    }
-    .profile-right a
-    {
-        color: transparent;
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-
-    .tab-content
-    {
-        text-align: justify;
-        text-align-last: center;
-    }
-
     .tab {
-        display: block;
-        align-content: center;
-        text-align: center;
-        padding: 10px 5px; /* Reduce overall padding for very small devices */
-    }
-
-    .tab h2
-    {
-        font-size: 1.3em; /* Further reduce headline font size */
-        padding: 0;
-        margin: 0;
+        flex-direction: column; /* Stack tab items vertically */
         text-align: center;
     }
-
-    .tab .bullets ul
-    {
-        padding: 0;
-        margin: 0;
-        align-content: center;
-        text-align: center;
-        list-style-type: none;
-    }
-
-    .tab ul {
-        font-size: 0.9em; /* Reduce font size slightly for better fit */
-    }
-
     .tab img {
-        padding: 0;
-        margin: 0;
-    };
-
-
-
+        margin: 0 0 15px 0; /* Adjust margin for vertical layout */
+    }
+    .tab h2, .tab .bullets ul {
+        text-align: center;
+    }
+    .tab .bullets li {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
 }
-
-
-
-
